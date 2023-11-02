@@ -30,6 +30,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'io.qameta.allure:allure-junit5:2.24.0'
+    implementation 'com.codeborne:selenide:7.0.2'
+
 }
 
 test {
@@ -43,5 +45,15 @@ tasks.register("simple", Test) {
     }
     useJUnitPlatform {
         includeTags("simple")
+    }
+}
+
+tasks.register("registration", Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform{
+        includeTags("remote")
     }
 }
