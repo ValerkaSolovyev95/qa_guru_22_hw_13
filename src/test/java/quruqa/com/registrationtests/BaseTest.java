@@ -2,6 +2,8 @@ package quruqa.com.registrationtests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,6 +24,11 @@ public class BaseTest {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+    }
+
+    @BeforeEach
+    void addListener () {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @BeforeEach

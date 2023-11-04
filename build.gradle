@@ -10,7 +10,7 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.21.0"
+def allureVersion = "2.24.0"
 
 allure {
     report {
@@ -31,6 +31,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'io.qameta.allure:allure-junit5:2.24.0'
     implementation 'com.codeborne:selenide:6.16.0'
+    implementation "io.qameta.allure:allure-selenide:$allureVersion"
+
 
 }
 
