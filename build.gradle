@@ -34,8 +34,6 @@ dependencies {
     implementation "io.qameta.allure:allure-selenide:$allureVersion"
     implementation 'com.github.javafaker:javafaker:1.0.2'
     implementation 'org.aspectj:aspectjweaver:1.9.20.1'
-
-
 }
 
 test {
@@ -69,5 +67,15 @@ tasks.register("remote_allure", Test) {
     }
     useJUnitPlatform{
         includeTags("remote_with_allure")
+    }
+}
+
+tasks.register("properties_tests", Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform{
+        includeTags("properties_tests")
     }
 }
