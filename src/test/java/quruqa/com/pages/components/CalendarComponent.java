@@ -1,2 +1,17 @@
-package quruqa.com.pages.components;public class CalendarComponent {
+package quruqa.com.pages.components;
+
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selenide.$;
+
+public class CalendarComponent {
+    SelenideElement monthSelect = $(".react-datepicker__month-select"),
+            yearSelect = $(".react-datepicker__year-select");
+
+    public void setupCalendar(String month, String year, String day) {
+        monthSelect.selectOption(month);
+        yearSelect.selectOption(year);
+        String selector = String.format(".react-datepicker__day--0%s",day);
+        $(selector).click();
+    }
 }
