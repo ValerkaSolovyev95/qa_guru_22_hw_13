@@ -41,6 +41,7 @@ test {
 }
 
 tasks.register("simple", Test) {
+    systemProperties(System.getProperties())
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
         exceptionFormat "full"
@@ -51,6 +52,7 @@ tasks.register("simple", Test) {
 }
 
 tasks.register("registration", Test) {
+    systemProperties(System.getProperties())
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
         exceptionFormat "full"
@@ -61,6 +63,7 @@ tasks.register("registration", Test) {
 }
 
 tasks.register("remote_allure", Test) {
+    systemProperties(System.getProperties())
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
         exceptionFormat "full"
@@ -70,12 +73,13 @@ tasks.register("remote_allure", Test) {
     }
 }
 
-tasks.register("properties_tests", Test) {
+tasks.register("properties_test", Test) {
+    systemProperties(System.getProperties())
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
         exceptionFormat "full"
     }
     useJUnitPlatform{
-        includeTags("properties_tests")
+        includeTags("properties_test")
     }
 }

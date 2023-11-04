@@ -18,9 +18,10 @@ public class BaseTest {
     static void setup() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserSize = System.getProperty("browser_size", "1920X1280");
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserSize = System.getProperty("browser_size");
         Configuration.remote = String.format("https://user1:1234@%s/wd/hub", System.getProperty("remote_url"));
+        Configuration.browserVersion = System.getProperty("browser_version");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
