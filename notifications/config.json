@@ -3,15 +3,15 @@
     "logo": "",
     "project": "my_project",
     "environment": "PROD",
-"comment": "comment",
-"reportLink": "",
-"language": "ru",
-"allureFolder": "build/allure-report",
-"enableChart": true
-},
-"telegram": {
-"token": "6868956057:AAHq3j2CBI_fFgpNYYuj_eJuu7e1cm2F75A",
-"chat": "-4033572133",
-"replyTo": ""
-}
+    "comment": "comment",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "build/allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6868956057:AAHq3j2CBI_fFgpNYYuj_eJuu7e1cm2F75A",
+    "chat": "-4033572133",
+    "replyTo": ""
+  }
 }
